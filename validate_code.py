@@ -13,8 +13,8 @@ def endgroup():
 
 if len(glob.glob("**/*.py", recursive=True)) > 0:
     startgroup("Hassfest")
-    os.system("echo hey4")
-    os.system("echo " + os.getenv("GITHUB_REPOSITORY"))
+    os.system("echo hey5")
+    os.system("echo " + os.getenv("GITHUB_REPOSITORY").split("/")[1].lower())
     os.system(
         """docker run --name hassfest_instance --workdir /github/workspace --rm """
         + """-v "/home/runner/work/blueprinttest/blueprinttest":"/github/workspace" hassfest"""
