@@ -19,7 +19,8 @@ else:
     print("No python files found, not running isort and black.")
 if len(glob.glob("**/*.js", recursive=True)) > 0:
     startgroup("JS format")
-    os.system("npx prettier --write")
+    os.system("echo dist >> .prettierignore")
+    os.system("npx prettier --write .")
     endgroup()
 else:
     print("No JS files found, not running prettier.")
