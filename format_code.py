@@ -20,7 +20,7 @@ else:
 if len(glob.glob("**/*.js", recursive=True)) > 0:
     startgroup("JS format")
     os.system("echo dist >> .prettierignore")
-    os.system("npx prettier --write .")
+    os.system("npx prettier --write **/*.{js,ts}")
     endgroup()
 else:
     print("No JS files found, not running prettier.")
