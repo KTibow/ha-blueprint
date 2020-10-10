@@ -33,6 +33,13 @@ else:
     print("No python files found, not running hassfest and flake8.")
 if len(glob.glob("**/*.js", recursive=True)) > 0:
     startgroup("ESLint")
+    if ".eslintrc" in "".join(glob.glob("**/*", recursive=True)):
+        print("Eslint already exists, not changing.")
+    else:
+        shutil.copyfile(
+            "/home/runner/work/_actions/KTibow/ha-blueprint/main/.eslintrc.js",
+            ".eslintrc.js",
+        )
     os.system("npx eslint . -f summary --ext js,ts || true")
     endgroup()
 else:
