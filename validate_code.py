@@ -13,10 +13,11 @@ def endgroup():
 
 if len(glob.glob("**/*.py", recursive=True)) > 0:
     startgroup("Hassfest")
-    os.system("echo hey3")
+    os.system("echo hey4")
+    os.system("echo " + os.getenv("GITHUB_REPOSITORY"))
     os.system(
         """docker run --name hassfest_instance --workdir /github/workspace --rm """
-        + """-v ".":"/github/workspace" hassfest"""
+        + """-v "/home/runner/work/blueprinttest/blueprinttest":"/github/workspace" hassfest"""
     )
     endgroup()
     startgroup("Flake8: Unused stuff and docstrings")
