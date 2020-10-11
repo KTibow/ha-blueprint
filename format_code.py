@@ -24,10 +24,10 @@ if len(glob.glob("**/*.js", recursive=True)) > 0:
     if prettier_ignore_existed:
         prev_ignore = open(".prettierignore", "r").read()
         with open(".prettierignore", "a") as prettier_ignore:
-            prettier_ignore.write("\ndist/")
+            prettier_ignore.write("\ndist\n*.config.js/")
     else:
         with open(".prettierignore", "w") as prettier_ignore:
-            prettier_ignore.write("dist/\n")
+            prettier_ignore.write("dist/\n*.config.js\n")
     os.system("npx prettier --write **/*.{js,ts}")
     if prettier_ignore_existed:
         with open(".prettierignore", "w") as prettier_ignore:
