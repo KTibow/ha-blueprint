@@ -40,7 +40,7 @@ if len(glob.glob("**/*.js", recursive=True)) > 0:
             "/home/runner/work/_actions/KTibow/ha-blueprint/main/.eslintrc.js",
             ".eslintrc.js",
         )
-    os.system("npx eslint . -f summary --ext js,ts || true")
+    os.system("npx eslint . -f summary --quiet --ext js,ts")
     endgroup()
 else:
     print("No JS files found, not running eslint.")
