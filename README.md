@@ -51,3 +51,5 @@ to
           FORMAT_CODE: DISABLED
 ```
 to disable code formatting.
+
+Here's an example log run: https://github.com/KTibow/ha-blueprint/runs/1244330084?check_suite_focus=true
