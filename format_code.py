@@ -19,7 +19,9 @@ else:
     print("No python files found, not running isort and black.")
 if len(glob.glob("**/*.js", recursive=True)) > 0:
     startgroup("JS format")
-    prettier_ignore_existed = ".prettierignore" in "".join(glob.glob("**/*", recursive=True))
+    prettier_ignore_existed = ".prettierignore" in "".join(
+        glob.glob("**/*", recursive=True)
+    )
     prev_ignore = ""
     if prettier_ignore_existed:
         prev_ignore = open(".prettierignore", "r").read()
