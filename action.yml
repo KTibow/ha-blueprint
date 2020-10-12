@@ -2,23 +2,16 @@ name: "HA Component CI"
 description: "General purpose CI for formatting and validating Home Assistant custom components."
 inputs:
   github_token:
-    description: 'Your personal GitHub Access token, just set it to \${{ secrets.GITHUB_TOKEN }}'
+    description: 'Your personal GitHub access token, the GitHub provided one should work just fine.'
     required: true
   format_code:
-    description: 'Whether or not to format code, set to DISABLED to disable'
+    description: 'Whether or not to format code, set to DISABLED to disable.'
     required: false
 runs:
   using: 'composite'
   steps:
     - run: |
         # Installation
-        pwd
-        cd ~
-        pwd
-        cd ${{ github.action_path }}
-        pwd
-        cd ${{ github.workspace }}
-        pwd
         python3 ${{ github.action_path }}/handle_install.py
       shell: bash
       name: Downloads
