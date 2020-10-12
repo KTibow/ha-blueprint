@@ -39,3 +39,5 @@ if os.getenv("FORMAT_CODE") != "DISABLED":
         endgroup()
     else:
         print("No JS files found, not running prettier.")
+else:
+    print("Formatting disabled, not running anything.")
