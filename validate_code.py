@@ -19,8 +19,10 @@ if len(glob.glob("**/*.py", recursive=True)) > 0:
         + f"""-v "/home/runner/work/{repo_name}/{repo_name}":"/github/workspace" hassfest"""
     )
     endgroup()
+    errors = os.system("flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics")
+    if errors != 0:
+        raise Exception("Python is invalid, according to flake8")
     startgroup("Flake8: Unused stuff and docstrings")
-    os.system("flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics")
     flake8start = """flake8 . --inline-quotes '"' --count --exit-zero --max-complexity=15 --max-line-length=90 --statistics """
     os.system(flake8start + "--select=D,DAR")
     os.system(flake8start + "--select=F")
