@@ -39,3 +39,15 @@ jobs:
 ```
 Some notes:
 - Change the CATEGORY to plugin if it's a JS card or plugin instead of an integration.
+- Change
+```
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+```
+to
+```
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          FORMAT_CODE: DISABLED
+```
+to disable code formatting.
