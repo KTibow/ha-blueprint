@@ -1,4 +1,4 @@
-name: "Custom Component CI"
+name: "Custom Component CI Test"
 on:
   push:
   pull_request:
@@ -28,4 +28,3 @@ jobs:
         name: CI
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          FORMAT_CODE: DISABLED
