@@ -12,7 +12,7 @@ def endgroup():
 
 
 if len(glob.glob("**/*.py", recursive=True)) > 0:
-    os.system("sh /home/runner/work/_actions/KTibow/ha-blueprint/main/python_setup.sh")
+    os.system("sh /home/runner/work/myaction/python_setup.sh")
 else:
     print("No python files found, not installing hassfest and flake8.")
 if len(glob.glob("**/*.js", recursive=True)) > 0:

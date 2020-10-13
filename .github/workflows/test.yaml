@@ -1,7 +1,8 @@
-name: "Validation And Formatting"
+name: "Custom Component CI Test"
 on:
   push:
-    branches: [stable]
+    branches: [main]
+  pull_request:
   schedule:
     - cron: '0 0 * * *'
 jobs:
@@ -24,7 +25,7 @@ jobs:
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           CATEGORY: integration
-      - uses: KTibow/ha-blueprint@stable
+      - uses: KTibow/ha-blueprint@main
         name: CI
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

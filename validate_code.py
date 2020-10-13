@@ -40,7 +40,7 @@ if len(glob.glob("**/*.js", recursive=True)) > 0:
     if os.path.isfile(".eslintrc"):
         os.remove(".eslintrc")
     shutil.copyfile(
-        "/home/runner/work/_actions/KTibow/ha-blueprint/main/.eslintrc.js",
+        "/home/runner/work/myaction/.eslintrc.js",
         ".eslintrc.js",
     )
     errors = os.system("npx eslint . -f summary --quiet --ext js,ts")
