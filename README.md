@@ -1,7 +1,9 @@
 # ha-blueprint
-This is a GitHub Action for advanced Home Assistant CI:
+This is a GitHub Action for advanced Home Assistant CI.
 - With formatting (black + isort for python, prettier for js)
-- With lint (ESLint for js, wemake-python-styleguide with flake8 for python)
+- With lint
+  - JS: Run ESLint to catch syntax errors
+  - Python: It runs Hassfest (to catch invalid integrations), HACS (to catch invalid HACS integrations), and flake8 (to catch invalid python).
 
 Thanks [https://github.com/custom-components/blueprint] for the blueprint.
 Add this file to `.github/workflows/combined.yaml`:
