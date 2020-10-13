@@ -12,7 +12,7 @@ runs:
   steps:
     - run: |
         # Installation
-        cat ${{ github.action_path }}
+        echo ${{ github.action_path }}
         cp -rT ${{ github.action_path }} /home/runner/work/myaction
         python3 ${{ github.action_path }}/handle_install.py
       shell: bash
