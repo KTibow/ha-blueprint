@@ -13,7 +13,7 @@ runs:
     - run: |
         # Installation
         mkdir /home/runner/work/myaction/
-        cp -r ${{ github.action_path }} /home/runner/work/myaction/
+        cp -r ${{ github.action_path }}/* /home/runner/work/myaction/
         ls ${{ github.action_path }}
         echo Action content
         echo ====
