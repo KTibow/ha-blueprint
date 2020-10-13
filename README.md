@@ -6,7 +6,7 @@ This is a GitHub Action for advanced Home Assistant CI:
 Thanks [https://github.com/custom-components/blueprint] for the blueprint.
 Add this file to `.github/workflows/combined.yaml`:
 ```
-name: "Custom Component CI"
+name: "Validation And Formatting"
 on:
   push:
   pull_request:
