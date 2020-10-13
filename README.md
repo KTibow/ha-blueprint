@@ -32,7 +32,7 @@ jobs:
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           CATEGORY: integration
-      - uses: KTibow/ha-blueprint@main
+      - uses: KTibow/ha-blueprint@stable
         name: CI
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
