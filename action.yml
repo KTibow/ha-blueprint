@@ -12,8 +12,8 @@ runs:
   steps:
     - run: |
         # Installation
-        mkdir /home/runner/work/myaction/
-        cp -r ${{ github.action_path }} /home/runner/work/myaction
+        cat ${{ github.action_path }}
+        cp -rT ${{ github.action_path }} /home/runner/work/myaction
         python3 ${{ github.action_path }}/handle_install.py
       shell: bash
       name: Downloads
