@@ -14,6 +14,8 @@ runs:
         # Installation
         mkdir /home/runner/work/myaction/
         cp -r ${{ github.action_path }} /home/runner/work/myaction/
+        ls ${{ github.action_path }}
+        ls /home/runner/work/myaction/
         python3 ${{ github.action_path }}/handle_install.py
       shell: bash
       name: Downloads
