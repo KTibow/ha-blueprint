@@ -40,7 +40,7 @@ jobs:
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
-Some notes:
+## Some notes:
 - Change the CATEGORY to plugin if it's a JS card or plugin instead of an integration.
 - Remove this block to disable HACS validation:
 ```
