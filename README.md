@@ -70,4 +70,6 @@ give me a thanks [here](https://saythanks.io/to/kendell.r%40outlook.com)
   
 give me a heart [here](https://community.home-assistant.io/t/235041?u=ktibow)  
 
+come on now it doesn't cost you money...
+
 </details>
