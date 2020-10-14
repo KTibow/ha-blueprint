@@ -39,5 +39,8 @@ if os.getenv("FORMAT_CODE") != "DISABLED":
         endgroup()
     else:
         print("No JS files found, not running prettier.")
+    startgroup("Pushing code")
+    os.system("sh /home/runner/work/myaction/push_code.sh")
+    endgroup()
 else:
     print("Formatting disabled, not running anything.")
