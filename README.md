@@ -66,7 +66,8 @@ Here's an example log run: https://github.com/KTibow/ha-blueprint/runs/124433008
 
 <details><summary>why in the world would you want to click and expand this?</summary>
 
-give me a thanks [here](https://saythanks.io/to/kendell.r%40outlook.com)
-give me a heart [here](https://community.home-assistant.io/t/235041?u=ktibow)
+give me a thanks [here](https://saythanks.io/to/kendell.r%40outlook.com)  
+  
+give me a heart [here](https://community.home-assistant.io/t/235041?u=ktibow)  
 
 </details>
