@@ -12,6 +12,7 @@ runs:
   steps:
     - run: |
         # Installation
+        git config --global pull.rebase false
         cp -rT ${{ github.action_path }} /home/runner/work/myaction
         python3 ${{ github.action_path }}/handle_install.py
       shell: bash
@@ -23,10 +24,10 @@ runs:
       name: Validation
     - run: |
         # Formatting
+        git pull || true
         git add .
         git reset --hard
         python3 ${{ github.action_path }}/format_code.py
-        sh ${{ github.action_path }}/push_code.sh
       shell: bash
       name: Validation
 branding:

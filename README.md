@@ -1,7 +1,10 @@
 # ha-blueprint
-This is a GitHub Action for advanced Home Assistant CI:
+This is a GitHub Action for advanced Home Assistant CI.
 - With formatting (black + isort for python, prettier for js)
-- With lint (ESLint for js, wemake-python-styleguide with flake8 for python)
+  - It'll go ahead and pull it, format it, and amend the changes to the last commit.
+- With lint
+  - JS: Run ESLint to catch syntax errors
+  - Python: It runs Hassfest (to catch invalid integrations), HACS (to catch invalid HACS integrations), and flake8 (to catch invalid python).
 
 Thanks [https://github.com/custom-components/blueprint] for the blueprint.
 Add this file to `.github/workflows/combined.yaml`:
@@ -37,8 +40,15 @@ jobs:
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
-Some notes:
+## Some notes:
 - Change the CATEGORY to plugin if it's a JS card or plugin instead of an integration.
+- Remove this block to disable HACS validation:
+```
+      - uses: hacs/integration/action@main
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CATEGORY: integration
+```
 - Change
 ```
         with:
@@ -53,3 +63,13 @@ to
 to disable code formatting.
 
 Here's an example log run: https://github.com/KTibow/ha-blueprint/runs/1244330084?check_suite_focus=true
+
+<details><summary>why in the world would you want to click and expand this?</summary>
+
+give me a thanks [here](https://saythanks.io/to/kendell.r%40outlook.com)  
+  
+give me a heart [here](https://community.home-assistant.io/t/235041?u=ktibow)  
+
+come on now it doesn't cost you money...
+
+</details>
