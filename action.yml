@@ -24,7 +24,7 @@ runs:
       name: Validation
     - run: |
         # Formatting
-        git pull
+        git pull || true
         git add .
         git reset --hard
         python3 ${{ github.action_path }}/format_code.py
