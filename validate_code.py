@@ -14,10 +14,12 @@ def endgroup():
 if len(glob.glob("**/*.py", recursive=True)) > 0:
     startgroup("Hassfest")
     repo_name = os.getenv("GITHUB_REPOSITORY").split("/")[1].lower()
-    os.system(
+    errors = os.system(
         """docker run --name hassfest_instance --workdir /github/workspace --rm """
         + f"""-v "/home/runner/work/{repo_name}/{repo_name}":"/github/workspace" hassfest"""
     )
+    if errors != 0:
+        raise Exception("Integration is invalid, according to hassfest")
     endgroup()
     errors = os.system(
         "flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics"
