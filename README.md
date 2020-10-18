@@ -51,11 +51,15 @@ jobs:
 ```
 - Change
 ```
+      - uses: KTibow/ha-blueprint@stable
+        name: CI
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
 to
 ```
+      - uses: KTibow/ha-blueprint@stable
+        name: CI
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           FORMAT_CODE: DISABLED
@@ -64,12 +68,14 @@ to disable code formatting.
 
 Here's an example log run: https://github.com/KTibow/ha-blueprint/runs/1244330084?check_suite_focus=true
 
-<details><summary>why in the world would you want to click and expand this?</summary>
+<details><summary>you don't need to click and expand this</summary>
 
 give me a thanks [here](https://saythanks.io/to/kendell.r%40outlook.com)  
   
 give me a heart [here](https://community.home-assistant.io/t/235041?u=ktibow)  
 
-come on now it doesn't cost you money...
+or just give me a star  
+
+i'm going to assume you've done that and thank you for letting me know that this is a worthwile thing.  
 
 </details>
