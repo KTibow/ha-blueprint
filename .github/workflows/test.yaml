@@ -11,8 +11,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         name: Download repo
-        with:
-          fetch-depth: 0
       - uses: actions/setup-python@v2
         name: Setup Python
       - uses: actions/cache@v2
