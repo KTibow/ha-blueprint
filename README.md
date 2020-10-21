@@ -70,6 +70,13 @@ Here's an example log run: https://github.com/KTibow/ha-blueprint/runs/124433008
 
 <details><summary>you don't need to click and expand this</summary>
 
+need a badge? no worries.  
+https://img.shields.io/github/workflow/status/KTibow/ha-blueprint/Validation%20And%20Formatting?logoColor=white&label=way%20too%20much%20validation&logo=github-actions&style=flat-square&logoWidth=25&labelColor=black  
+  
+change `KTibow/ha-blueprint/Validation%20And%20Formatting` to the name of your repo and workflow.  
+  
+link back in markdown if you want.  
+
 give me a thanks [here](https://saythanks.io/to/kendell.r%40outlook.com)  
   
 give me a heart [here](https://community.home-assistant.io/t/235041?u=ktibow)  
