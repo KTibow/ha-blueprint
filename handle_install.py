@@ -18,7 +18,7 @@ else:
 if len(glob.glob("**/*.js", recursive=True)) > 0:
     startgroup("ESLint setup")
     os.system("npm install")
-    os.system("npm install eslint eslint-formatter-summary prettier")
+    os.system("npm install eslint eslint-formatter-summary typescript @typescript-eslint/parser prettier")
     endgroup()
 else:
     print("No JS files found, not installing eslint and prettier.")
