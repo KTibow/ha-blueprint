@@ -7,9 +7,7 @@ git add *.js
 git add *.ts
 git add *.py
 git status
-git log
 git commit --amend --no-edit || true
 git status
-git log
-git push --force | true
+git push --force || true
 fi
