@@ -11,6 +11,9 @@ def endgroup():
     os.system("echo ::endgroup::")
 
 if os.getenv("FORMAT_CODE") != "DISABLED":
+    startgroup("Pulling code")
+    os.system("sh /home/runner/work/myaction/pull_code.sh")
+    endgroup()
     if len(glob.glob("**/*.py", recursive=True)) > 0:
         startgroup("Python format")
         os.system("sh /home/runner/work/myaction/python_format.sh")
