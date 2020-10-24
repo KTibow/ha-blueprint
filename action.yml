@@ -3,7 +3,7 @@ description: "General purpose CI for formatting and validating Home Assistant cu
 inputs:
   github_token:
     description: 'Your personal GitHub access token, the GitHub provided one should work just fine.'
-    required: true
+    required: false
   format_code:
     description: 'Whether or not to format code, set to DISABLED to disable.'
     required: false
