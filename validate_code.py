@@ -14,6 +14,10 @@ def endgroup():
 if len(glob.glob("**/*.py", recursive=True)) > 0:
     startgroup("Hassfest")
     repo_name = os.getenv("GITHUB_REPOSITORY").split("/")[1].lower()
+    print(
+        """docker run --name hassfest_instance --workdir /github/workspace --rm """
+        + f"""-v "/home/runner/work/{repo_name}/{repo_name}":"/github/workspace" hassfest"""
+    )
     errors = os.system(
         """docker run --name hassfest_instance --workdir /github/workspace --rm """
         + f"""-v "/home/runner/work/{repo_name}/{repo_name}":"/github/workspace" hassfest"""
