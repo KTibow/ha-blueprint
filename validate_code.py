@@ -31,7 +31,7 @@ if len(glob.glob("**/*.py", recursive=True)) > 0:
     if errors != 0:
         raise Exception("Python is invalid, according to flake8")
     startgroup("Flake8: Unused stuff and docstrings")
-    flake8start = """flake8 . --inline-quotes '"' --count --exit-zero --max-complexity=15 --max-line-length=90 --statistics """
+    flake8start = "flake8 . --inline-quotes double --count --exit-zero --max-complexity=15 --max-line-length=90 --statistics "
     os.system(flake8start + "--select=D,DAR")
     os.system(flake8start + "--select=F")
     endgroup()
