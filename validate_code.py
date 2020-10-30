@@ -31,31 +31,23 @@ if len(glob.glob("**/*.py", recursive=True)) > 0:
         "flake8 . --inline-quotes double --count --exit-zero --max-complexity=15"
         + f" --max-line-length=90 --statistics --format '{flake8_format}' "
     )
-    startgroup("Flake8: Docstrings")
-    os.system(flake8_start + "--select=D,DAR")
-    endgroup()
-    startgroup("Flake8: Small tweaks that might help")
-    os.system(flake8_start + r"--select=WPS323,WPS420,WPS336,WPS305,E800\:,WPS421")
+    lint_categories = {
+        "Docstrings": "D,DAR",
+        "Small tweaks that might help, but might conflict or be inconvenient": r"WPS323,WPS420,WPS336,WPS305,E800\:,WPS421,W503",
+        "Trailing commas and isort": "I,C81",
+        "Overcomplex code": "WPS214,WPS229,WPS226",
+        "Useless stuff": "WPS507,F401",
+        "Bandit": "S",
+    }
+    for name, codes in lint_categories.items():
+        startgroup(f"Flake8: {name}")
+        os.system(flake8_start + f"--select={codes}")
+        endgroup()
+    # Small tweaks that might help, but might conflict or be inconvenient:
     # Using print() (wrong function call), try (wrong keyword), explicit string concat,
     # f string, commented out code, and % formatting
-    endgroup()
-    startgroup("Flake8: Trailing commas and isort")
-    os.system(flake8_start + "--select=I,C81")
-    endgroup()
-    startgroup("Flake8: Overcomplex code")
-    os.system(flake8_start + "--select=WPS214,WPS229,WPS226")
-    endgroup()
-    startgroup("Flake8: Useless stuff")
-    os.system(flake8_start + "--select=WPS507,F401")
-    endgroup()
-    startgroup("Flake8: Bandit")
-    os.system(flake8_start + "--select=S")
-    endgroup()
     startgroup("Flake8: Everything else")
-    os.system(
-        flake8_start
-        + "--ignore=D,DAR,WPS323,WPS420,WPS336,WPS305,E800\:,WPS421,I,C81,WPS214,WPS229,WPS226,WPS507,F401,S"
-    )
+    os.system(flake8_start + "--ignore=" + "".join(list(lint_categories.values())))
     endgroup()
 else:
     print("No python files found, not running hassfest and flake8.")
