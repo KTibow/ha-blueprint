@@ -33,8 +33,8 @@ if len(glob.glob("**/*.py", recursive=True)) > 0:
     endgroup()
     startgroup(r"Flake8: Random pickies that don\'t matter")
     os.system(
-        flake8_start + "--select=WPS323,WPS305,WPS421"
-    )  # Using print() (wrong function call), f string, and % formatting
+        flake8_start + "--select=WPS323,WPS305,E800,WPS421"
+    )  # Using print() (wrong function call), f string, commented out code, and % formatting
     endgroup()
     startgroup("Flake8: Trailing commas and isort")
     os.system(flake8_start + "--select=I,C81")
@@ -43,7 +43,7 @@ if len(glob.glob("**/*.py", recursive=True)) > 0:
     os.system(flake8_start + "--select=S")
     endgroup()
     startgroup("Flake8: Everything else")
-    os.system(flake8_start + "--ignore=D,DAR,WPS323,WPS305,WPS421,I,C81,S")
+    os.system(flake8_start + "--ignore=D,DAR,WPS323,WPS305,E800,WPS421,I,C81,S")
     endgroup()
 else:
     print("No python files found, not running hassfest and flake8.")
