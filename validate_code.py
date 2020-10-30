@@ -32,8 +32,14 @@ if len(glob.glob("**/*.py", recursive=True)) > 0:
         raise Exception("Python is invalid, according to flake8")
     flake8_format = "${blue_bold}%(path)s:%(row)d:${green_bold}%(col)d ${purple_bold}%(code)s${reset} %(text)s"
     flake8_start = f"flake8 . --inline-quotes double --count --exit-zero --max-complexity=15 --max-line-length=90 --statistics --format '{flake8_format}'"
-    startgroup("Flake8: Unused stuff and docstrings")
-    os.system(flake8_start)
+    startgroup("Flake8: Docstrings")
+    os.system(flake8_start + "--select=D,DAR")
+    endgroup()
+    startgroup("Flake8: Random pickies that won't matter")
+    os.system(flake8_start + "--select=WPS323,WPS305,WPS421")
+    endgroup()
+    startgroup("Flake8: Everything else")
+    os.system(flake8_start + "--ignore=D,DAR,WPS323,WPS305,WPS421")
     endgroup()
 else:
     print("No python files found, not running hassfest and flake8.")
@@ -51,3 +57,4 @@ if len(glob.glob("**/*.js", recursive=True)) > 0:
     endgroup()
 else:
     print("No JS files found, not running eslint.")
+print("dwoof")
