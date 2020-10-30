@@ -45,13 +45,16 @@ if len(glob.glob("**/*.py", recursive=True)) > 0:
     startgroup("Flake8: Overcomplex code")
     os.system(flake8_start + "--select=WPS214,WPS229,WPS226")
     endgroup()
+    startgroup("Flake8: Useless stuff")
+    os.system(flake8_start + "--select=WPS507,F401")
+    endgroup()
     startgroup("Flake8: Bandit")
     os.system(flake8_start + "--select=S")
     endgroup()
     startgroup("Flake8: Everything else")
     os.system(
         flake8_start
-        + "--ignore=D,DAR,WPS323,WPS420,WPS336,WPS305,E800\:,WPS421,I,C81,WPS214,WPS229,WPS226,S"
+        + "--ignore=D,DAR,WPS323,WPS420,WPS336,WPS305,E800\:,WPS421,I,C81,WPS214,WPS229,WPS226,WPS507,F401,S"
     )
     endgroup()
 else:
