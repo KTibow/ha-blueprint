@@ -31,13 +31,14 @@ if len(glob.glob("**/*.py", recursive=True)) > 0:
     if errors != 0:
         raise Exception("Python is invalid, according to flake8")
     startgroup("Flake8: Unused stuff and docstrings")
-    flake8start = "flake8 . --inline-quotes double --count --exit-zero --max-complexity=15 --max-line-length=90 --statistics "
-    os.system(flake8start + "--select=D,DAR")
-    os.system(flake8start + "--select=F")
+    flake8_format = "${blue_bold}%(path) at %(row)d:${green_bold}%(col)d ${purple_bold}%(code)s${reset} %(text)s"
+    flake8_start = f"flake8 . --inline-quotes double --count --exit-zero --max-complexity=15 --max-line-length=90 --statistics --format '{flake8_format}'"
+    os.system(flake8_start + "--select=D,DAR")
+    os.system(flake8_start + "--select=F")
     endgroup()
     startgroup("Flake8: Other random stuff")
-    os.system(flake8start + "--select=I,P,WPS305,C812,E203,W503,E800")
-    os.system(flake8start + "--ignore=I,P,WPS305,C812,E203,W503,E800,D,DAR,F")
+    os.system(flake8_start + "--select=I,P,WPS305,C812,E203,W503,E800")
+    os.system(flake8_start + "--ignore=I,P,WPS305,C812,E203,W503,E800,D,DAR,F")
     endgroup()
 else:
     print("No python files found, not running hassfest and flake8.")
