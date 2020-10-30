@@ -35,7 +35,7 @@ if len(glob.glob("**/*.py", recursive=True)) > 0:
     startgroup("Flake8: Docstrings")
     os.system(flake8_start + "--select=D,DAR")
     endgroup()
-    startgroup("Flake8: Random pickies that won't matter")
+    startgroup("Flake8: Random pickies that won\\'t matter")
     os.system(flake8_start + "--select=WPS323,WPS305,WPS421")
     endgroup()
     startgroup("Flake8: Everything else")
