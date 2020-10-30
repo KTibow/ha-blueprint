@@ -31,7 +31,7 @@ if len(glob.glob("**/*.py", recursive=True)) > 0:
     if errors != 0:
         raise Exception("Python is invalid, according to flake8")
     flake8_format = "${blue_bold}%(path)s:%(row)d:${green_bold}%(col)d ${purple_bold}%(code)s${reset} %(text)s"
-    flake8_start = f"flake8 . --inline-quotes double --count --exit-zero --max-complexity=15 --max-line-length=90 --statistics --format '{flake8_format}'"
+    flake8_start = f"flake8 . --inline-quotes double --count --exit-zero --max-complexity=15 --max-line-length=90 --statistics --format '{flake8_format}' "
     startgroup("Flake8: Docstrings")
     os.system(flake8_start + "--select=D,DAR")
     endgroup()
