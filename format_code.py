@@ -10,6 +10,7 @@ def startgroup(text):
 def endgroup():
     os.system("echo ::endgroup::")
 
+
 if os.getenv("FORMAT_CODE") != "DISABLED":
     startgroup("Pulling code")
     os.system("sh /home/runner/work/myaction/pull_code.sh")

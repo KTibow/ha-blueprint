@@ -14,10 +14,6 @@ def endgroup():
 if len(glob.glob("**/*.py", recursive=True)) > 0:
     startgroup("Hassfest")
     repo_name = os.getenv("GITHUB_REPOSITORY").split("/")[1].lower()
-    print(
-        """docker run --name hassfest_instance --workdir /github/workspace --rm """
-        + f"""-v "/home/runner/work/{repo_name}/{repo_name}":"/github/workspace" hassfest"""
-    )
     errors = os.system(
         """docker run --name hassfest_instance --workdir /github/workspace --rm """
         + f"""-v "/home/runner/work/{repo_name}/{repo_name}":"/github/workspace" hassfest"""
@@ -35,11 +31,19 @@ if len(glob.glob("**/*.py", recursive=True)) > 0:
     startgroup("Flake8: Docstrings")
     os.system(flake8_start + "--select=D,DAR")
     endgroup()
-    startgroup("Flake8: Random pickies that won\\'t matter")
-    os.system(flake8_start + "--select=WPS323,WPS305,WPS421")
+    startgroup(r"Flake8: Random pickies that don\'t matter")
+    os.system(
+        flake8_start + "--select=WPS323,WPS305,WPS421"
+    )  # Using print() (wrong function call), f string, and % formatting
+    endgroup()
+    startgroup("Flake8: Trailing commas and isort")
+    os.system(flake8_start + "--select=I,C81")
+    endgroup()
+    startgroup("Flake8: Bandit")
+    os.system(flake8_start + "--select=S")
     endgroup()
     startgroup("Flake8: Everything else")
-    os.system(flake8_start + "--ignore=D,DAR,WPS323,WPS305,WPS421")
+    os.system(flake8_start + "--ignore=D,DAR,WPS323,WPS305,WPS421,I,C81,S")
     endgroup()
 else:
     print("No python files found, not running hassfest and flake8.")
@@ -57,4 +61,3 @@ if len(glob.glob("**/*.js", recursive=True)) > 0:
     endgroup()
 else:
     print("No JS files found, not running eslint.")
-print("dwoof")
