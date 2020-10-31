@@ -49,7 +49,7 @@ if len(glob.glob("**/*.py", recursive=True)) > 0:
     os.system(flake8_start + "--ignore=" + ",".join(list(lint_categories.values())))
     endgroup()
     os.system("echo Looking for what these warnings mean?")
-    os.system("echo If it starts with WPS, look here:")
+    os.system("echo If it starts with WPS, look here (remove the WPS part first):")
     os.system("echo https://wemake-python-stylegui.de/en/latest/search.html")
     os.system('echo Else just search for it with the keywords "flake8 python".')
 else:
