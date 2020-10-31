@@ -47,7 +47,7 @@ if len(glob.glob("**/*.py", recursive=True)) > 0:
     # Using print() (wrong function call), try (wrong keyword), explicit string concat,
     # f string, commented out code, and % formatting
     startgroup("Flake8: Everything else")
-    os.system(flake8_start + "--ignore=" + "".join(list(lint_categories.values())))
+    os.system(flake8_start + "--ignore=" + ",".join(list(lint_categories.values())))
     endgroup()
 else:
     print("No python files found, not running hassfest and flake8.")
