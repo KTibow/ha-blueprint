@@ -1,14 +1,18 @@
 import glob
 import os
 import shutil
+import sys
+
 
 
 def startgroup(text):
-    os.system("echo ::group::" + text)
+    print("::group::" + text)
+    sys.stdout.flush()
 
 
 def endgroup():
-    os.system("echo ::endgroup::")
+    print("::endgroup::")
+    sys.stdout.flush()
 
 
 if os.getenv("FORMAT_CODE") != "DISABLED":
