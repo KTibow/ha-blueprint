@@ -2,8 +2,6 @@ import glob
 import os
 import shutil
 
-from colorama import Fore, init
-
 def startgroup(text):
     os.system("echo ::group::" + text)
 
@@ -11,7 +9,8 @@ def startgroup(text):
 def endgroup():
     os.system("echo ::endgroup::")
 
-print(Fore.MAGENTA + "Installing dependencies.")
+print("\033[31mInstalling dependencies.\033[39m")
+os.system("python -m pip install --upgrade colorama")
 
 if len(glob.glob("**/*.py", recursive=True)) > 0:
     os.system("sh /home/runner/work/myaction/python_setup.sh")
