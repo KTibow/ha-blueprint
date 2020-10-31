@@ -22,7 +22,7 @@ if len(glob.glob("**/*.py", recursive=True)) > 0:
         raise Exception("Integration is invalid, according to hassfest")
     endgroup()
     errors = os.system(
-        "flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics"
+        "flake8 . --select=E9,F63,F7,F82 --show-source --statistics"
     )
     if errors != 0:
         raise Exception("Python is invalid, according to flake8")
@@ -33,9 +33,9 @@ if len(glob.glob("**/*.py", recursive=True)) > 0:
     )
     lint_categories = {
         "Docstrings": "D,DAR",
-        "Small tweaks that might help, but might conflict or be inconvenient": r"WPS323,WPS420,WPS336,WPS305,E800\:,WPS421,W503",
+        "Small tweaks that might help, but might conflict or be inconvenient": r"WPS323,WPS336,WPS305,WPS420,WPS440,WPS441,WPS515,E800\:,WPS421,W503",
         "Trailing commas and isort": "I,C81",
-        "Overcomplex code": "WPS214,WPS229,WPS226",
+        "Overcomplex code": "WPS214,WPS221,WPS229,WPS226",
         "Useless stuff": "WPS507,F401",
         "Bandit": "S",
     }
