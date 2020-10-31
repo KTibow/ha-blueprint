@@ -4,7 +4,6 @@ import shutil
 import sys
 
 
-
 def startgroup(text):
     print("::group::" + text)
     sys.stdout.flush()
