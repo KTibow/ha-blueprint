@@ -50,9 +50,9 @@ if len(glob.glob("**/*.py", recursive=True)) > 0:
     os.system(flake8_start + "--ignore=" + ",".join(list(lint_categories.values())))
     endgroup()
     print(Fore.GREEN + "Looking for what these warnings mean?")
-    os.system("echo If it starts with WPS, look here (remove the WPS part first):")
-    os.system("echo https://wemake-python-stylegui.de/en/latest/search.html")
-    os.system('echo Else just search for it with the keywords "flake8 python".')
+    print(Fore.GREEN + "If it starts with WPS, look here (remove the WPS part first):")
+    print(Fore.GREEN + "https://wemake-python-stylegui.de/en/latest/search.html")
+    print(Fore.MAGENTA + "Else just search for it with the keywords "flake8 python".')
 else:
     print("No python files found, not running hassfest and flake8.")
 if len(glob.glob("**/*.js", recursive=True)) > 0:
