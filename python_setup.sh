@@ -15,7 +15,7 @@ echo "::endgroup::"
 # Flake8
 echo "::group::Flake8 setup"
 python -m pip install --upgrade pip wheel
-python -m pip install --upgrade flake8 wemake-python-styleguide flake8-colors
+python -m pip install --upgrade flake8 wemake-python-styleguide flake8-colors colorama
 echo "::endgroup::"
 # Formatting
 echo "::group::Format setup"
