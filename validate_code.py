@@ -51,7 +51,7 @@ if len(glob.glob("**/*.py", recursive=True)) > 0:
     endgroup()
     print(Fore.MAGENTA + "Looking for what these warnings mean?")
     print(Fore.MAGENTA + "If it starts with WPS, look here (remove the WPS part first):")
-    print(Fore.BLUE + "https://wemake-python-stylegui.de/en/latest/search.html")
+    print(Fore.RED + "https://wemake-python-stylegui.de/en/latest/search.html")
     print(Fore.MAGENTA + 'Else just search for it with the keywords "flake8 python".')
 else:
     print("No python files found, not running hassfest and flake8.")
