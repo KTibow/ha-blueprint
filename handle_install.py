@@ -9,7 +9,7 @@ def startgroup(text):
 def endgroup():
     os.system("echo ::endgroup::")
 
-print("\033[31mInstalling dependencies.\033[39m")
+print("\033[35mInstalling dependencies.\033[39m")
 os.system("python -m pip install --upgrade colorama")
 
 if len(glob.glob("**/*.py", recursive=True)) > 0:
