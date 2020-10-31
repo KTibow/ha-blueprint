@@ -1,6 +1,7 @@
 import glob
 import os
 import shutil
+import sys
 
 def startgroup(text):
     os.system("echo ::group::" + text)
@@ -10,6 +11,7 @@ def endgroup():
     os.system("echo ::endgroup::")
 
 print("\033[35mInstalling dependencies.\033[39m")
+sys.stdout.flush()
 os.system("python -m pip install --upgrade colorama")
 
 if len(glob.glob("**/*.py", recursive=True)) > 0:
