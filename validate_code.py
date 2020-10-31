@@ -21,9 +21,7 @@ if len(glob.glob("**/*.py", recursive=True)) > 0:
     if errors != 0:
         raise Exception("Integration is invalid, according to hassfest")
     endgroup()
-    errors = os.system(
-        "flake8 . --select=E9,F63,F7,F82 --show-source --statistics"
-    )
+    errors = os.system("flake8 . --select=E9,F63,F7,F82 --show-source --statistics")
     if errors != 0:
         raise Exception("Python is invalid, according to flake8")
     flake8_format = "${blue_bold}%(path)s:%(row)d:${green_bold}%(col)d ${purple_bold}%(code)s${reset} %(text)s"
@@ -33,12 +31,12 @@ if len(glob.glob("**/*.py", recursive=True)) > 0:
     )
     lint_categories = {
         "Docstrings": "D,DAR",
-        "Small tweaks that might help, but might conflict or be inconvenient": r"WPS323,WPS336,WPS305,WPS420,WPS440,WPS441,WPS515,E800\:,WPS421,W503",
+        "Small tweaks that might help, but might conflict or be inconvenient": r"WPS323,WPS336,WPS305,WPS420,WPS440,WPS441,WPS515,E800\:,WPS421,W503,WPS412",
         "Trailing commas and isort": "I,C81",
         "Overcomplex code": "WPS214,WPS221,WPS229,WPS226",
         "Useless stuff": "WPS507,F401,WPS504",
         "Bandit": "S",
-        "Clarity and quality improvements": "WPS432,WPS110,WPS111,WPS322,E501"
+        "Clarity and quality improvements": "WPS432,WPS110,WPS111,WPS322,E501",
     }
     for name, codes in lint_categories.items():
         startgroup(f"Flake8: {name}")
@@ -50,6 +48,10 @@ if len(glob.glob("**/*.py", recursive=True)) > 0:
     startgroup("Flake8: Everything else")
     os.system(flake8_start + "--ignore=" + ",".join(list(lint_categories.values())))
     endgroup()
+    os.system("echo Looking for what these warnings mean?")
+    os.system("echo If it starts with WPS, look here:")
+    os.system("echo https://wemake-python-stylegui.de/en/latest/search.html")
+    os.system('echo Else just search for it with the keywords "flake8 python".')
 else:
     print("No python files found, not running hassfest and flake8.")
 if len(glob.glob("**/*.js", recursive=True)) > 0:
