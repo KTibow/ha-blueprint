@@ -4,7 +4,7 @@ import shutil
 
 
 def startgroup(text):
-    os.system("echo ::group::" + text)
+    os.system("echo -e ::group::" + text)
 
 
 def endgroup():
