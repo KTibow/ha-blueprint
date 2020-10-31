@@ -1,10 +1,11 @@
 import glob
 import os
 import shutil
+from colorama import init, Fore
 
 
 def startgroup(text):
-    os.system("echo -e ::group::" + text)
+    os.system("echo ::group::" + text)
 
 
 def endgroup():
@@ -39,7 +40,7 @@ if len(glob.glob("**/*.py", recursive=True)) > 0:
         "Clarity and quality improvements": "WPS432,WPS110,WPS111,WPS322,E501",
     }
     for name, codes in lint_categories.items():
-        startgroup(fr"\e[45mMagentaFlake8: {name}")
+        startgroup(f"Flake8: {name}")
         os.system(flake8_start + f"--select={codes}")
         endgroup()
     # Small tweaks that might help, but might conflict or be inconvenient:
