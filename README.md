@@ -1,8 +1,8 @@
 # ha-blueprint
-This is a GitHub Action for advanced Home Assistant CI.
-- With formatting (black + isort for python, prettier for js)
+This is a GitHub Action for advanced Home Assistant CI. Whenever you push to your repo, this will happen:
+- It'll format it (black + isort for python, prettier for js)
   - It'll go ahead and pull it, format it, and amend the changes to the last commit.
-- With lint
+- It'll lint it
   - JS: Run ESLint to catch syntax errors
   - Python: It runs Hassfest (to catch invalid integrations), HACS (to catch invalid HACS integrations), and flake8 (to catch invalid python).
 
