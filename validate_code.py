@@ -35,8 +35,8 @@ if len(glob.glob("**/*.py", recursive=True)) > 0:
         "Docstrings": "D,DAR",
         "Small tweaks that might help, but might conflict or be inconvenient": r"WPS323,WPS336,WPS305,WPS420,WPS440,WPS441,WPS515,E800\:,WPS421,W503,WPS412",
         "Trailing commas and isort": "I,C81",
-        "Overcomplex code": "WPS214,WPS221,WPS229,WPS226",
-        "Useless stuff": "WPS507,F401,WPS504",
+        "Overcomplex code": "WPS201,WPS210,WPS214,WPS221,WPS229,WPS226",
+        "Useless stuff": "F401,F841,WPS327,WPS503,WPS504,WPS507",
         "Bandit": "S",
         "Clarity and quality improvements": "WPS432,WPS110,WPS111,WPS322,E501",
     }
