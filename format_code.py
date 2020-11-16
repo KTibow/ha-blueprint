@@ -13,7 +13,6 @@ def endgroup():
     print("::endgroup::")
     sys.stdout.flush()
 
-print("fcode", os.getenv("FORMAT_CODE"))
 if os.getenv("FORMAT_CODE") != "DISABLED":
     startgroup("Pulling code")
     os.system("sh /home/runner/work/myaction/pull_code.sh")
