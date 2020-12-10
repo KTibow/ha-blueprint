@@ -31,9 +31,8 @@ jobs:
           path: |
             ~/.cache/pip
           key: custom-component-ci
-      - uses: hacs/integration/action@main
+      - uses: hacs/action@main
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           CATEGORY: integration
       - uses: KTibow/ha-blueprint@stable
         name: CI
@@ -44,9 +43,8 @@ jobs:
 - Change the CATEGORY to plugin if it's a JS card or plugin instead of an integration.
 - Remove this block to disable HACS validation:
 ```
-      - uses: hacs/integration/action@main
+      - uses: hacs/action@main
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           CATEGORY: integration
 ```
 - Change
