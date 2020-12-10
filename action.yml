@@ -7,6 +7,12 @@ inputs:
   format_code:
     description: 'Whether or not to format code, set to DISABLED to disable.'
     required: false
+  hassfest:
+    description: 'Whether or not to run hassfest, set to DISABLED to disable.'
+    required: false
+  flake8_fails:
+    description: 'Customize error codes for flake8 that cause the run to fail, defaults to E9,F63,F7,F82.'
+    required: false
 runs:
   using: 'composite'
   steps:
