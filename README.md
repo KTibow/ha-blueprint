@@ -25,6 +25,8 @@ jobs:
           fetch-depth: 0
       - uses: actions/setup-python@v2
         name: Setup Python
+        with:
+          python-version: '3.8.x'
       - uses: actions/cache@v2
         name: Cache
         with:
@@ -63,6 +65,8 @@ to
           FORMAT_CODE: DISABLED
 ```
 to disable code formatting.
+- Set `HASSFEST` to `DISABLED` to disable hassfest
+- Set `FLAKE8_FAILS` to customize stuff that the run fails on
 
 Here's an example log run: https://github.com/KTibow/ha-blueprint/runs/1244330084?check_suite_focus=true
 

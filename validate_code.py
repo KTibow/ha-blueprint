@@ -24,6 +24,7 @@ if len(glob.glob("**/*.py", recursive=True)) > 0:
         if errors != 0:
             raise Exception("Integration is invalid, according to hassfest")
         endgroup()
+    os.system("rm -r wheels-custom-integrations || true")
     errors = os.system(f"flake8 . --select={os.getenv('FLAKE8_FAILS', 'E9,F63,F7,F82')} --show-source --statistics")
     if errors != 0:
         raise Exception("Python is invalid, according to flake8")
