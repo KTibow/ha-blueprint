@@ -26,7 +26,7 @@ jobs:
           CATEGORY: integration
           # DON'T DO THIS
           # I'm just doing this because I'm not testing whether my blueprint integration is up to date
-          ignore: "archived brands description hacs hacsjson images information issues requirements topics wheels"
+          ignore: "archived brands description hacs hacsjson images information issues requirements topics wheels manifest"
       - uses: KTibow/ha-blueprint@main
         name: CI
         with:
