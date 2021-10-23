@@ -81,3 +81,4 @@ if len(glob.glob("**/*.js", recursive=True)) > 0:
     endgroup()
 else:
     print("No JS files found, not running eslint.")
+
