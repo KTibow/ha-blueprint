@@ -30,7 +30,7 @@ if len(glob.glob("**/*.py", recursive=True)) > 0:
         raise Exception("Python is invalid, according to flake8")
     flake8_format = "${blue_bold}%(path)s:%(row)d:${green_bold}%(col)d ${purple_bold}%(code)s${reset} %(text)s"
     flake8_start = (
-        "flake8 . --inline-quotes double --count --exit-zero --max-complexity=15"
+        "flake8 . --count --exit-zero --max-complexity=15"
         + f" --max-line-length=90 --statistics --format '{flake8_format}' "
     )
     lint_categories = {
