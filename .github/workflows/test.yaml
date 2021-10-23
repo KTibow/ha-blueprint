@@ -21,10 +21,12 @@ jobs:
           path: |
             ~/.cache/pip
           key: custom-component-ci
-      - uses: hacs/integration/action@main
+      - uses: hacs/action@main
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           CATEGORY: integration
+          # DON'T DO THIS
+          # I'm just doing this because I'm not testing whether my blueprint integration is up to date
+          ignore: "archived brands description hacs hacsjson images information issues requirements topics wheels manifest"
       - uses: KTibow/ha-blueprint@main
         name: CI
         with:
