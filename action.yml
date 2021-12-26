@@ -17,6 +17,12 @@ runs:
   using: 'composite'
   steps:
     - run: |
+        # Warning
+        echo !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        echo !        ha-blueprint is being retired, it has way too many issues with it        !
+        echo ! please manually use hassfest and hacs in actions, ping @KTibow if you want help !
+        echo !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    - run: |
         # Installation
         git config --global pull.rebase false
         cp -rT ${{ github.action_path }} /home/runner/work/myaction
@@ -33,6 +39,12 @@ runs:
         python3 ${{ github.action_path }}/format_code.py
       shell: bash
       name: Formatting
+    - run: |
+        # Warning
+        echo !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        echo !        ha-blueprint is being retired, it has way too many issues with it        !
+        echo ! please manually use hassfest and hacs in actions, ping @KTibow if you want help !
+        echo !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 branding:
   icon: 'home'
   color: 'blue'
