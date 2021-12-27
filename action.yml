@@ -22,6 +22,8 @@ runs:
         echo !        ha-blueprint is being retired, it has way too many issues with it        !
         echo ! please manually use hassfest and hacs in actions, ping @KTibow if you want help !
         echo !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+      shell: bash
+      name: Warning
     - run: |
         # Installation
         git config --global pull.rebase false
@@ -45,6 +47,8 @@ runs:
         echo !        ha-blueprint is being retired, it has way too many issues with it        !
         echo ! please manually use hassfest and hacs in actions, ping @KTibow if you want help !
         echo !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+      shell: bash
+      name: Warning
 branding:
   icon: 'home'
   color: 'blue'
