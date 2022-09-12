@@ -1,4 +1,11 @@
 # ha-blueprint
+## Warning
+```
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!        ha-blueprint is being retired, it has way too many issues with it        !
+! please manually use hassfest and hacs in actions, ping @KTibow if you want help !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+```
 This is a GitHub Action for advanced Home Assistant CI. Whenever you push to your repo, this will happen:
 - It'll format it (black + isort for python, prettier for js)
   - It'll go ahead and pull it, format it, and amend the changes to the last commit.
